@@ -1,0 +1,26 @@
+<h3>Angular Google API</h3>
+
+<agm-map #gmap [latitude]="lat" [longitude]="lng">
+  <agm-direction [origin]="origin" [destination]="destination"></agm-direction>
+  <agm-marker 
+    [latitude]="lat" 
+    [longitude]="lng">
+
+    <agm-info-window [disableAutoPan]="false" #infoWindow>
+      <div>
+        Distancia a partir de aqui: {{info.distance}}
+      </div>
+      <div>
+        Tiempo en llegar al destino: {{info.duration}} 
+      </div>
+    </agm-info-window>
+
+  </agm-marker>
+</agm-map>
+
+<div #containerMap>
+  
+</div>
+
+<button (click)="changeRoute()">Cambiar Ruta</button>
+<button (click)="getData()">Start</button>
